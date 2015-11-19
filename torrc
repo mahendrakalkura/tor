@@ -1,0 +1,19 @@
+AllowSingleHopExits      1
+AllowUnverifiedNodes     middle,rendezvous
+AvoidDiskWrites          1
+CircuitBuildTimeout      5
+ControlPort              {{ control_port }}
+CookieAuthentication     0
+DataDirectory            {{ data_directory }}
+KeepalivePeriod          30
+LearnCircuitBuildTimeout 0
+Log                      notice file {{ data_directory }}/log
+MaxCircuitDirtiness      60
+NewCircuitPeriod         15
+Nickname                 YOUCANTSEEME{{ index }}
+NumEntryGuards           16
+RunAsDaemon              1
+SocksBindAddress         {{ socks_bind_address }}
+SocksPolicy              accept *
+SocksPort                {{ socks_port }}
+StrictNodes              1
