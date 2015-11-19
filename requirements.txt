@@ -1,0 +1,3 @@
+human-curl==0.1.9
+pycurl2==7.20.0
+wsgiref==0.1.2
