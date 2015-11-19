@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+
+HOSTNAME = '127.0.0.1'
+
+NODES = 50
+
+POLIPO = 9150
+
+TIMEOUT = 30
+
+TOR = {
+    'control': 8118,
+    'socks': 9050,
+}
