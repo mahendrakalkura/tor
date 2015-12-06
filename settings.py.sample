@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-HOSTNAME = '127.0.0.1'
+HOSTNAME = '0.0.0.0'
 
 NODES = 50
 
