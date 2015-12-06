@@ -96,11 +96,12 @@ def polipo():
             'allowedPorts=1-65535',
             'daemonise=true',
             'logSyslog=true',
-            'proxyAddress=0.0.0.0',
+            'proxyAddress={proxy_address:s}',
             'proxyPort={proxy_port:d}',
             'socksParentProxy={socks_parent_proxy_hostname}:{socks_parent_proxy_port:d}',
             'tunnelAllowedPorts=1-65535',
         ]).format(
+            proxy_address=HOSTNAME,
             proxy_port=POLIPO + index,
             socks_parent_proxy_hostname=HOSTNAME,
             socks_parent_proxy_port=TOR['socks'] + index,
