@@ -48,6 +48,13 @@ def get_output(command):
         raise SystemExit
 
 
+def iptables():
+    for index in range(1, NODES + 1):
+        print 'iptables -A INPUT -p tcp --dport {port:d} -j ACCEPT'.format(port=TOR['socks'] + index)
+    for index in range(1, NODES + 1):
+        print 'iptables -A INPUT -p tcp --dport {port:d} -j ACCEPT'.format(port=POLIPO + index)
+
+
 def reset():
     while True:
         pids = []
