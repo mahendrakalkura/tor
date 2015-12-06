@@ -15,7 +15,7 @@ from settings import HOSTNAME, NODES, POLIPO, TIMEOUT, TOR
 
 def get_ip_addresses(type, port):
     pool = Pool(processes=NODES)
-    ip_addresses = pool.map(get_ip_address, [(type, port + index, ) for index in range(1, NODES + 1)])
+    ip_addresses = pool.map(get_ip_address, [(type, port + index,) for index in range(1, NODES + 1)])
     pool.close()
     pool.join()
     return ip_addresses
@@ -50,9 +50,9 @@ def get_output(command):
 
 def iptables():
     for index in range(1, NODES + 1):
-        print 'iptables -A INPUT -p tcp --dport {port:d} -j ACCEPT'.format(port=TOR['socks'] + index)
+        print 'iptables -A INPUT -j ACCEPT -p tcp --dport {port:d}'.format(port=TOR['socks'] + index)
     for index in range(1, NODES + 1):
-        print 'iptables -A INPUT -p tcp --dport {port:d} -j ACCEPT'.format(port=POLIPO + index)
+        print 'iptables -A INPUT -j ACCEPT -p tcp --dport {port:d}'.format(port=POLIPO + index)
 
 
 def reset():
